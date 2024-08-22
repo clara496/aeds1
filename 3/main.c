@@ -3,25 +3,40 @@
 
 int main()
 {
-    int v,vc,ex;
+    float a, n;
+    int r;
 
-    printf("Qual a velocidade maxima na avenida em Km por H?  ");
-    scanf("%d",&v);
+    printf("Qual o salario atual?\n");
+    scanf("%f",&a);
 
-    printf("Qual a velocidade que o motorista estava dirigindo?  ");
-    scanf("%d",&vc);
+    printf("Escolha o calculo que quer fazer em seu salario\n");
+    printf("(1) Aumento de 8%% no salario\n");
+    printf("(2) Aumento de 11%% no salario\n");
+    printf("(3) Aumento fixo no salario\n");
+    scanf("%d", &r);
 
-    ex=vc-v;
+    switch(r){
+    case 1:
+        n = a * 1.08;
+        printf("Seu novo salario com aumento de %8 e de %.2f reais \n", n);
+        break;
 
-    if (ex<=0){
-        printf("\n\nMotorista respeitou a lei!!");
-    } else if (ex>0 && ex<=10){
-        printf("\n\nMotorista nao respeitou a lei. Multa = 50 reais");
-    } else if (ex>10 && ex<=30){
-        printf("\n\nMotorissta nao respeitou a lei. Multa = 100 reais");
-    } else if (ex>30){
-        printf("Motorista nao respeitou a lei. Multa = 200 reais");
+    case 2:
+        n = a * 1.11;
+        printf("Seu novo salario com aumento de %11 e de %.2f reais \n", n);
+        break;
+
+    case 3:
+            if (a <= 1000) {
+                 n = a + 350;
+            } else {
+                n = a + 200;
+            }
+            printf("Novo salario com aumento fixo: %.2f\n", n);
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            break;
     }
-
     return 0;
 }
