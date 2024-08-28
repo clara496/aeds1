@@ -3,20 +3,30 @@
 
 int main()
 {
-    int x,y;
+    int cara,coroa,r,j;
+    j=0;
+    cara=0;
+    coroa=0;
 
-    printf("Qual o primeiro numero?");
-    scanf("%d",&x);
+    while (j<5){
+        printf("\nQual o resultado?\n(1)Cara\n(2)Coroa\n\n");
+        scanf("%d",&r);
 
-    printf("Qual o segundo numero?");
-    scanf("%d",&y);
+        if (r==1){
+            cara++;
+        } else {
+            coroa++;
+        }
+        j++;
+    }
+        printf("\nCara = %d\n",cara);
+        printf("\nCoroa = %d\n",coroa);
 
-    if (x>y) {
-            printf("%d maior que %d",x,y);
-    }else if (x<y) {
-            printf("%d menor que %d",x,y);
-    }else {
-            printf("%d igual a %d",x,y);
-            }
+        if (cara>coroa){
+            printf("\nMaior ocorrencia: Cara");
+        } else if (cara<coroa) {
+            printf("\nMaior ocorrencia: Coroa");
+        }
+
     return 0;
 }
